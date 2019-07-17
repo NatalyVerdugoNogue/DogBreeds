@@ -1,0 +1,18 @@
+<!-- <p *ngFor="let breed of breedsList">{{ breed }}</p> -->
+
+<mat-form-field>
+    <mat-label>Razas</mat-label>
+    <mat-select [formControl]="breeds" multiple>
+        <mat-option *ngFor="let breed of breedsList" [value]="breed">{{ breed }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+    <mat-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%" *ngFor="let breed of breeds.value">
+        <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+            <span fxFlex="80%">{{ breed }}</span>
+        </mat-card-title>
+        <!-- <img mat-card-image [src]="https: //material.angular.io/assets/img/examples/shiba2.jpg" /> -->
+    </mat-card>
+</div>
