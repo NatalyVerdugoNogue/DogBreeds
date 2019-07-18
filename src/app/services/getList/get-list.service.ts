@@ -6,11 +6,11 @@ import { Observable } from "rxjs";
   providedIn: "root"
 })
 export class GetListService {
-  private listAllBreeds = "https://dog.ceo/api/breeds/list/all";
+  private urlListAllBreeds = "https://dog.ceo/api/breeds/list/all";
 
   constructor(private http: HttpClient) {}
 
   getAllBreeds(): Observable<any> {
-    return this.http.get(this.listAllBreeds);
+    return this.http.get(this.urlListAllBreeds);
   }
 }
