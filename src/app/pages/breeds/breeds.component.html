@@ -1,18 +1,38 @@
-<!-- <p *ngFor="let breed of breedsList">{{ breed }}</p> -->
+<!-- Titulo -->
+<h1 class="titleDog">Razas de Perros</h1>
 
-<mat-form-field>
-    <mat-label>Razas</mat-label>
-    <mat-select [formControl]="breeds" multiple>
-        <mat-option *ngFor="let breed of breedsList" [value]="breed">{{ breed }}
-        </mat-option>
-    </mat-select>
-</mat-form-field>
+<!-- Selector -->
+<mat-card class="select-mat-card">
+    <mat-card-content>
+        <p class="select-p">Selecciona una raza para ver su foto!!!</p>
+        <mat-select-autocomplete class="grid-7-11" [placeholder]="'Razas'" [errorMsg]="errorMessage"
+            [showErrorMsg]="showError" [options]="breedsList" [display]="'display'" [value]="'value'" [labelCount]="2"
+            [multiple]='true' [selectedOptions]="selectedOptions" (selectionChange)="getSelectedOptions($event)">
+        </mat-select-autocomplete>
+    </mat-card-content>
+</mat-card>
 
-<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
-    <mat-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%" *ngFor="let breed of breeds.value">
+<!-- tarjeta de imagen perros -->
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="flex-start">
+    <mat-card class="image-mat-card" fxFlex="0 1 calc(25% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)"
+        fxFlex.lt-sm="100%" *ngFor="let option of selected">
         <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
-            <span fxFlex="80%">{{ breed }}</span>
+            <span fxFlex="80%">{{ option.name }}</span>
         </mat-card-title>
-        <img mat-card-image [src]="this.imageBreed(breed)" />
+        <img mat-card-image [src]="option.url" width="auto" height="240" />
+        <mat-card-content>
+            <!-- condición existencia sub raza -->
+            <div *ngIf="option.sub.length !== 0; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock>
+                <p>
+                    Sub razas: {{option.sub}}
+                </p>
+            </ng-template>
+            <ng-template #elseBlock>
+                <p>
+                    Esta raza no tiene sub raza
+                </p>
+            </ng-template>
+        </mat-card-content>
     </mat-card>
 </div>

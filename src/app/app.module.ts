@@ -9,6 +9,8 @@ import { AppComponent } from "./app.component";
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
+import { SelectAutocompleteModule } from "mat-select-autocomplete";
+
 // Material angular
 import { BreedsComponent } from "./pages/breeds/breeds.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -27,6 +29,7 @@ import {
     FlexLayoutModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    SelectAutocompleteModule,
     MatButtonModule,
     MatCheckboxModule,
     MatSelectModule,
@@ -38,4 +41,4 @@ import {
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
