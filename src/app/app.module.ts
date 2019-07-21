@@ -21,9 +21,13 @@ import {
   MatCardModule,
   MatGridListModule
 } from "@angular/material";
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatIconModule } from "@angular/material/icon";
+import { ModalSubBreedComponent } from "./shares/modal-sub-breed/modal-sub-breed.component";
 
 @NgModule({
-  declarations: [AppComponent, BreedsComponent],
+  declarations: [AppComponent, BreedsComponent, ModalSubBreedComponent],
+  entryComponents: [ModalSubBreedComponent],
   imports: [
     BrowserModule,
     FlexLayoutModule,
@@ -36,9 +40,11 @@ import {
     FormsModule,
     ReactiveFormsModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
