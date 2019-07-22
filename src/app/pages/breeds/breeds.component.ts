@@ -52,10 +52,13 @@ export class BreedsComponent implements OnInit {
     this.selected = [];
     selected.map(name => {
       this.imagesService.getImageBreed(name[0]).subscribe(url => {
+        const sub = name[1].map(subB =>
+          subB.replace(/\b\w/g, l => l.toUpperCase())
+        );
         this.selected.push({
           name: name[0].replace(/\b\w/g, l => l.toUpperCase()),
           url: url.message,
-          sub: name[1]
+          sub
         });
       });
     });
@@ -70,11 +73,9 @@ export class BreedsComponent implements OnInit {
   }
 
   // Modal sub raza
-  openDialog() {
-    const dialogRef = this.dialog.open(ModalSubBreedComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+  openDialog(name, subBreed) {
+    this.dialog.open(ModalSubBreedComponent, {
+      data: { name, subBreed }
     });
   }
 }

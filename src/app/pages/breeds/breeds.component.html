@@ -5,8 +5,8 @@
 <mat-card class="select-mat-card">
     <mat-card-content>
         <p class="select-p">Selecciona una raza para ver su foto!!!</p>
-        <mat-select-autocomplete class="grid-7-11" [placeholder]="'Razas'" [errorMsg]="errorMessage" [showErrorMsg]="showError" [options]="breedsList" [display]="'display'" [value]="'value'" [labelCount]="2" [multiple]="true" [selectedOptions]="selectedOptions"
-            (selectionChange)="getSelectedOptions($event)">
+        <mat-select-autocomplete class="grid-7-11" [placeholder]="'Razas'" [selectPlaceholder]="'Buscar...'" [appearance]="'legacy'" [errorMsg]="errorMessage" [showErrorMsg]="showError" [options]="breedsList" [display]="'display'" [value]="'value'" [multiple]="true"
+            [selectedOptions]="selectedOptions" (selectionChange)="getSelectedOptions($event)">
         </mat-select-autocomplete>
     </mat-card-content>
 </mat-card>
@@ -15,7 +15,7 @@
 <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="flex-start">
     <mat-card class="image-mat-card" fxFlex="0 1 calc(25% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%" *ngFor="let option of selected">
         <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
-            <span fxFlex="80%">{{ option.name }}</span>
+            <span>{{ option.name }}</span>
         </mat-card-title>
         <img mat-card-image [src]="option.url" width="auto" height="240" />
         <mat-card-content>
@@ -24,13 +24,13 @@
             <!-- ; else elseBlock -->
             <ng-template #thenBlock>
                 <div fxLayout="row">
-                    <div fxFlex="80">
+                    <div fxFlex="90">
                         <span>Sub razas: {{ option.sub }}</span>
                     </div>
-                    <div fxFlex="20">
-                        <button mat-button (click)="openDialog()">
-                            <mat-icon> info</mat-icon>
-                        </button>
+                    <div class="btn-info" fxFlex="10">
+                        <mat-icon class="btn-icon-info" (click)="openDialog(option.name, option.sub)">
+                            info
+                        </mat-icon>
                     </div>
                 </div>
             </ng-template>

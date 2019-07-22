@@ -1,40 +1,48 @@
 /* titulo */
-.titleDog{
-    font-family: 'Barriecito', cursive;
+
+.titleDog {
+    font-family: "Barriecito", cursive;
     font-size: 8vw;
     text-align: center;
     background-color: #002984;
-    color: #FFE082;
+    color: #ffe082;
     margin: 0;
     padding: 3vh 0;
 }
 
+
 /* tarjeta contenedora selector */
+
 .select-mat-card {
     margin: 2vw;
     background: url(../../img/foot.png);
 }
 
+
 /* texto selector */
-.select-p{
+
+.select-p {
     font-size: 1rem;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Ubuntu", sans-serif;
     color: #002884;
 }
 
+
 /* tarjeta contenedora imagenes perros */
+
 .image-mat-card {
     margin: 16px;
-    background-color: #002984;
-    color: #FFE082;
-    font-family: 'Ubuntu', sans-serif;
+    background-color: #002984cc;
+    color: #ffe082;
+    font-family: "Ubuntu", sans-serif;
     border-radius: 16px;
 }
 
-/* imagen dentro tarjeta imagenes perros */
-.img-card{
-    padding:8px 0;
+
+/* boton info de icono */
+
+.btn-info {
+    text-align: right;
+    cursor: pointer;
+    cursor: hand
 }
-
-
-

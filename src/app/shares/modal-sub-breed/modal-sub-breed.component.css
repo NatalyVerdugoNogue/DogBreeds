@@ -1,0 +1,24 @@
+/* tarjeta contenedora imagenes perros */
+
+.image-mat-card {
+    margin: 16px;
+    color: #002984;
+    font-family: "Ubuntu", sans-serif;
+    border-radius: 16px;
+}
+
+
+/* imagen tarjeta sub raza */
+
+.img-card-sub {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* modal sub raza */
+
+.mat-modal-sub {
+    font-family: "Ubuntu", sans-serif;
+}

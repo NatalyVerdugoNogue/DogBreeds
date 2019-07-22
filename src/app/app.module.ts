@@ -7,8 +7,6 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from "./app.component";
 
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-
 import { SelectAutocompleteModule } from "mat-select-autocomplete";
 
 // Material angular
@@ -24,6 +22,8 @@ import {
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatIconModule } from "@angular/material/icon";
 import { ModalSubBreedComponent } from "./shares/modal-sub-breed/modal-sub-breed.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatRadioModule } from "@angular/material/radio";
 
 @NgModule({
   declarations: [AppComponent, BreedsComponent, ModalSubBreedComponent],
@@ -37,12 +37,13 @@ import { ModalSubBreedComponent } from "./shares/modal-sub-breed/modal-sub-breed
     MatButtonModule,
     MatCheckboxModule,
     MatSelectModule,
-    FormsModule,
-    ReactiveFormsModule,
     MatCardModule,
     MatGridListModule,
     MatDialogModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
